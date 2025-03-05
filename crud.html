@@ -2,18 +2,10 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-    <!-- 
-    Enlace a Bootstrap 4.5 (puedes usar la versión más reciente también) 
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    Enlace a tu archivo CSS
-    <link rel="stylesheet" href="styles.css">
-    -->
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CRUD de Productos - Gymshark</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="styles.css">
-    
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
@@ -62,25 +54,20 @@
                             <li><a class="dropdown-item" href="#">Guantes</a></li>
                         </ul>
                     </li>
-    
-                    <!-- Registro e Iniciar sesión -->
-                    <li class="nav-item"><a class="nav-link text-white" href="registro.html">Registro</a></li>
-                    <li class="nav-item"><a class="nav-link text-white" href="login.html">Iniciar sesión</a></li>
-                    
-                    <!-- Gestión de productos temporal debido a que esta funcionalidad solo debe ser visible para el administrador del sitio -->
+
+                    <!-- Cierre de sesión -->
                     <li class="nav-item">
-                    <a class="nav-link text-white" href="crud.html">Gestión de Productos</a>
-                </li>              
+                        <a class="nav-link text-white" href="index.html">Cerrar Sesión</a>
+                    </li>
                 </ul>
             </div>
-        </div>
+        </div>              
     </nav>
 
-    <!-- Fondo negro -->
     <div class="container-fluid bg-dark" style="height: 100vh;">
         <div class="row justify-content-center align-items-center" style="height: 100%;">
 
-            <!-- Contenedor del formulario de inicio de sesión -->
+            <!-- Contenedor del formulario de registro de productos -->
             <div class="col-md-4 col-12">
                 <div class="card p-4">
                     
@@ -89,33 +76,77 @@
                         <img src="img/logo.png" alt="Logo" width="150px">
                     </div>
 
-                    <h3 class="text-center">Iniciar sesión</h3>
-                    <form>
-                        <div class="form-group">
-                            <label for="username">Correo electrónico</label>
-                            <input type="email" class="form-control" id="username" placeholder="Introduce tu correo electrónico" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="password">Contraseña</label>
-                            <input type="password" class="form-control" id="password" placeholder="Introduce tu contraseña" required>
-                        </div>
-                        <button type="submit" class="btn btn-primary btn-block">Iniciar sesión</button>
-                    </form>
-                    <div class="text-center mt-3">
-                        <a href="#">¿Olvidaste tu contraseña?</a>
+                    <h2 class="text-center">Gestión de Productos</h2>
+                    <div class="card p-3">
+                        <form id="productForm">
+                            <div class="mb-3">
+                                <label class="form-label">Nombre del Producto</label>
+                                <input type="text" id="productName" class="form-control" required>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Precio</label>
+                                <input type="number" id="productPrice" class="form-control" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Agregar Producto</button>
+                        </form>
                     </div>
-                    <div class="text-center mt-4">
-                        <p>¿No tienes una cuenta? <a href="registro.html">Regístrate aquí</a></p>
-                    </div>
+                    <table class="table table-striped mt-3">
+                        <thead>
+                            <tr>
+                                <th>Nombre</th>
+                                <th>Precio</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody id="productTable"></tbody>
+                    </table>
                 </div>
             </div>
-
         </div>
-    </div>
 
-    <!-- Enlace a los scripts de Bootstrap -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.0/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        let products = [];
+
+        document.getElementById('productForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const name = document.getElementById('productName').value;
+            const price = document.getElementById('productPrice').value;
+            products.push({ name, price });
+            updateTable();
+            this.reset();
+        });
+
+        function updateTable() {
+            const table = document.getElementById('productTable');
+            table.innerHTML = '';
+            products.forEach((product, index) => {
+                table.innerHTML += `
+                    <tr>
+                        <td>${product.name}</td>
+                        <td>$${product.price}</td>
+                        <td>
+                            <button class="btn btn-warning btn-sm" onclick="editProduct(${index})">Editar</button>
+                            <button class="btn btn-danger btn-sm" onclick="deleteProduct(${index})">Eliminar</button>
+                        </td>
+                    </tr>
+                `;
+            });
+        }
+
+        function editProduct(index) {
+            const product = products[index];
+            document.getElementById('productName').value = product.name;
+            document.getElementById('productPrice').value = product.price;
+            products.splice(index, 1);
+            updateTable();
+        }
+
+        function deleteProduct(index) {
+            products.splice(index, 1);
+            updateTable();
+        }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

@@ -4,12 +4,71 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registrar Usuario</title>
-    <!-- Enlace a Bootstrap 4.5 -->
+    <!-- Enlace a Bootstrap 4.5
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Enlace a tu archivo CSS -->
+    Enlace a tu archivo CSS 
     <link rel="stylesheet" href="styles.css">
+    -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+
 </head>
 <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand text-white" href="index.html"> <strong>Gymshark</strong> </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <!-- Mujer -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-white" href="#" id="mujerDropdown" role="button" data-bs-toggle="dropdown">
+                            Mujer
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="Mujeres.html">Ver todo</a></li>
+                            <li><a class="dropdown-item" href="#">Leggings</a></li>
+                            <li><a class="dropdown-item" href="#">Tops</a></li>
+                            <li><a class="dropdown-item" href="#">Sudaderas</a></li>
+                        </ul>
+                    </li>
+    
+                    <!-- Hombres -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-white" href="#" id="hombresDropdown" role="button" data-bs-toggle="dropdown">
+                            Hombres
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="Hombres.html">Ver todo</a></li>
+                            <li><a class="dropdown-item" href="#">Camisetas</a></li>
+                            <li><a class="dropdown-item" href="#">Shorts</a></li>
+                            <li><a class="dropdown-item" href="#">Hoddies</a></li>
+                        </ul>
+                    </li>
+    
+                    <!-- Accesorios -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-white" href="#" id="accesoriosDropdown" role="button" data-bs-toggle="dropdown">
+                            Accesorios
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="Accesorios.html">Ver todo</a></li>
+                            <li><a class="dropdown-item" href="#">Mochilas</a></li>
+                            <li><a class="dropdown-item" href="#">Botellas</a></li>
+                            <li><a class="dropdown-item" href="#">Guantes</a></li>
+                        </ul>
+                    </li>
+    
+                    <!-- Registro e Iniciar sesión -->
+                    <li class="nav-item"><a class="nav-link text-white" href="registro.html">Registro</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="login.html">Iniciar sesión</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
     <!-- Fondo negro -->
     <div class="container-fluid bg-dark" style="height: 100vh;">
