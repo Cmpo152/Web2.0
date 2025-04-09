@@ -7,10 +7,6 @@
   <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet" />
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <style>
-    body { font-family: 'Poppins', sans-serif; }
-    h1, h2, h3, .font-Lobster { font-family: 'Lobster', cursive; }
-  </style>
 </head>
 <body class="bg-black text-white">
 
@@ -32,10 +28,14 @@
   <!-- Hero Section -->
   <header class="relative h-screen flex items-center justify-center bg-black mt-16">
     <div class="absolute top-0 left-0 w-full h-full overflow-hidden z-0">
-      <video muted autoplay loop class="object-cover w-full h-full">
-        <source src="video/video.mp4" type="video/mp4">
-        Tu navegador no soporta video HTML5.
-      </video>
+      <iframe
+        class="w-full h-full"
+        src="https://www.youtube.com/embed/9mdqyA8eLDY?autoplay=1&mute=1&loop=1&playlist=9mdqyA8eLDY"
+        title="Gymshark video"
+        frameborder="0"
+        allow="autoplay; fullscreen"
+        allowfullscreen
+      ></iframe>
     </div>
     <div class="text-center z-10">
       <h1 class="text-5xl font-bold mb-4 font-Lobster">Gymshark</h1>
@@ -66,15 +66,9 @@
       </div>
     </div>
   </section>
-
+  <br><br>
   <!-- Registro -->
-  <section id="registro" class="relative min-h-screen flex items-center justify-center text-black">
-    <div class="absolute top-0 left-0 w-full h-full">
-      <video muted autoplay loop class="object-cover w-full h-full">
-        <source src="video/video.mp4" type="video/mp4">
-        Tu navegador no soporta video HTML5.
-      </video>
-    </div>
+  <section id="registro" class="relative min-h-screen flex items-center justify-center text-black bg-gradient-to-r from-blue-500 via-purple-600 to-pink-500 animate-gradient-x">
     <div class="bg-white bg-opacity-90 p-8 rounded-lg max-w-md w-full text-center shadow-lg z-10">
       <img src="img/logo.png" alt="Logo" class="mx-auto mb-6 h-16">
       <h2 class="text-3xl font-semibold mb-2">REGISTRARSE</h2>
@@ -88,15 +82,9 @@
       <p class="mt-4 text-sm">¿Ya tienes cuenta? <a href="#login" class="text-blue-500 hover:underline">Inicia sesión</a></p>
     </div>
   </section>
-
+<br><br>
   <!-- Login -->
-  <section id="login" class="relative min-h-screen flex items-center justify-center text-black">
-    <div class="absolute top-0 left-0 w-full h-full">
-      <video muted autoplay loop class="object-cover w-full h-full">
-        <source src="video/video.mp4" type="video/mp4">
-        Tu navegador no soporta video HTML5.
-      </video>
-    </div>
+  <section id="login" class="relative min-h-screen flex items-center justify-center text-black bg-gradient-to-r from-blue-500 via-purple-600 to-pink-500 animate-gradient-x">
     <div class="bg-white bg-opacity-90 p-8 rounded-lg max-w-md w-full text-center shadow-lg z-10">
       <img src="img/logo.png" alt="Logo" class="mx-auto mb-6 h-16">
       <h2 class="text-3xl font-semibold mb-2">INICIAR SESIÓN</h2>
@@ -104,10 +92,10 @@
       <form class="space-y-4">
         <input type="email" placeholder="Email" required class="w-full p-3 bg-gray-200 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500" />
         <input type="password" placeholder="Password" required class="w-full p-3 bg-gray-200 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500" />
-        <button type="submit" class="w-full bg-blue-500 hover:bg-blue-600 text-white py-3 rounded-md font-semibold">Login</button>
+        <button type="submit" class="w-full bg-blue-500 hover:bg-blue-600 text-white py-3 rounded-md font-semibold">Iniciar sesión</button>
       </form>
-      <a href="#" class="text-blue-500 hover:underline text-sm mt-2 block">¿Olvidaste la contraseña?</a>
-      <p class="mt-4 text-sm">¿Aún no eres parte de la grandeza? <a href="#registro" class="text-blue-500 hover:underline">¡Regístrate!</a></p>
+      <a href="#" class="text-blue-400 hover:underline text-sm mt-2 block">¿Olvidaste la contraseña?</a>
+      <p class="mt-4 text-sm">¿Aún no eres parte de la grandeza? <a href="#registro" class="text-blue-400 hover:underline">¡Regístrate!</a></p>
     </div>
   </section>
 
@@ -116,5 +104,23 @@
     <p>&copy; 2025 Gymshark. Todos los derechos reservados.</p>
   </footer>
 
+  <style>
+    @keyframes gradient-x {
+      0%, 100% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+    }
+
+    .animate-gradient-x {
+      background: linear-gradient(270deg, #00c6ff, #0072ff, #00c6ff);
+      background-size: 600% 600%;
+      animation: gradient-x 8s ease infinite;
+    }
+  </style>
+
 </body>
 </html>
+
