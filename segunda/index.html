@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gymshark</title>
+  <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-black text-white">
+
+  <!-- Navbar -->
+  <nav class="fixed top-0 w-full bg-black bg-opacity-60 p-4 flex justify-between items-center z-50">
+    <div class="logo flex items-center gap-2">
+      <img src="img/tiburon.png" alt="Logo" class="h-8">
+      <strong class="text-xl font-semibold">Gymshark</strong>
+    </div>
+    <div class="nav-links flex gap-6">
+      <a href="#mujer" class="text-white hover:text-blue-500">Mujer</a>
+      <a href="#hombres" class="text-white hover:text-blue-500">Hombres</a>
+      <a href="#accesorios" class="text-white hover:text-blue-500">Accesorios</a>
+      <a href="#registro" class="text-white hover:text-blue-500">Registro</a>
+      <a href="#login" class="text-white hover:text-blue-500">Iniciar sesión</a>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="relative h-screen flex items-center justify-center bg-black mt-16">
+    <div class="absolute top-0 left-0 w-full h-full overflow-hidden z-0">
+      <iframe
+        class="w-full h-full"
+        src="https://www.youtube.com/embed/9mdqyA8eLDY?autoplay=1&mute=1&loop=1&playlist=9mdqyA8eLDY"
+        title="Gymshark video"
+        frameborder="0"
+        allow="autoplay; fullscreen"
+        allowfullscreen
+      ></iframe>
+    </div>
+    <div class="text-center z-10">
+      <h1 class="text-5xl font-bold mb-4 font-Lobster">Gymshark</h1>
+      <p class="text-xl mb-6">Rinde al máximo. Vive con estilo.</p>
+      <a href="#galeria" class="bg-blue-500 text-white py-3 px-8 rounded-full font-bold hover:bg-blue-600">Explorar</a>
+    </div>
+  </header>
+
+  <!-- Galería -->
+  <section class="py-20 text-center" id="galeria">
+    <h2 class="text-3xl mb-10">WHITNEY: CONSIGUE EL LOOK</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 px-4 max-w-6xl mx-auto">
+      <div class="bg-gray-800 p-6 rounded-lg hover:bg-red-500 hover:scale-105 transition-all transform">
+        <img src="img/img1.jpg" alt="FUERZA" class="w-full rounded-lg mb-4">
+        <p class="font-semibold">FUERZA</p>
+      </div>
+      <div class="bg-gray-800 p-6 rounded-lg hover:bg-green-500 hover:scale-105 transition-all transform">
+        <img src="img/img2.jpg" alt="RESISTENCIA" class="w-full rounded-lg mb-4">
+        <p class="font-semibold">RESISTENCIA</p>
+      </div>
+      <div class="bg-gray-800 p-6 rounded-lg hover:bg-blue-500 hover:scale-105 transition-all transform">
+        <img src="img/img3.jpg" alt="PODER" class="w-full rounded-lg mb-4">
+        <p class="font-semibold">PODER</p>
+      </div>
+      <div class="bg-gray-800 p-6 rounded-lg hover:bg-yellow-500 hover:scale-105 transition-all transform">
+        <img src="img/img4.jpg" alt="VALOR" class="w-full rounded-lg mb-4">
+        <p class="font-semibold">VALOR</p>
+      </div>
+    </div>
+  </section>
+  <br><br>
+  <!-- Registro -->
+  <section id="registro" class="relative min-h-screen flex items-center justify-center text-black bg-gradient-to-r from-blue-500 via-purple-600 to-pink-500 animate-gradient-x">
+    <div class="bg-white bg-opacity-90 p-8 rounded-lg max-w-md w-full text-center shadow-lg z-10">
+      <img src="img/logo.png" alt="Logo" class="mx-auto mb-6 h-16">
+      <h2 class="text-3xl font-semibold mb-2">REGISTRARSE</h2>
+      <h3 class="text-xl mb-4">Únete a la grandeza.</h3>
+      <form class="space-y-4">
+        <input type="text" placeholder="Nombre" required class="w-full p-3 bg-gray-200 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+        <input type="email" placeholder="Email" required class="w-full p-3 bg-gray-200 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+        <input type="password" placeholder="Password" required class="w-full p-3 bg-gray-200 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+        <button type="submit" class="w-full bg-blue-500 hover:bg-blue-600 text-white py-3 rounded-md font-semibold">Registrarse</button>
+      </form>
+      <p class="mt-4 text-sm">¿Ya tienes cuenta? <a href="#login" class="text-blue-500 hover:underline">Inicia sesión</a></p>
+    </div>
+  </section>
+<br><br>
+  <!-- Login -->
+  <section id="login" class="relative min-h-screen flex items-center justify-center text-black bg-gradient-to-r from-blue-500 via-purple-600 to-pink-500 animate-gradient-x">
+    <div class="bg-white bg-opacity-90 p-8 rounded-lg max-w-md w-full text-center shadow-lg z-10">
+      <img src="img/logo.png" alt="Logo" class="mx-auto mb-6 h-16">
+      <h2 class="text-3xl font-semibold mb-2">INICIAR SESIÓN</h2>
+      <h3 class="text-xl mb-4">Solo para los que van más allá.</h3>
+      <form class="space-y-4">
+        <input type="email" placeholder="Email" required class="w-full p-3 bg-gray-200 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+        <input type="password" placeholder="Password" required class="w-full p-3 bg-gray-200 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+        <button type="submit" class="w-full bg-blue-500 hover:bg-blue-600 text-white py-3 rounded-md font-semibold">Iniciar sesión</button>
+      </form>
+      <a href="#" class="text-blue-400 hover:underline text-sm mt-2 block">¿Olvidaste la contraseña?</a>
+      <p class="mt-4 text-sm">¿Aún no eres parte de la grandeza? <a href="#registro" class="text-blue-400 hover:underline">¡Regístrate!</a></p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-black text-white text-center p-4">
+    <p>&copy; 2025 Gymshark. Todos los derechos reservados.</p>
+  </footer>
+
+  <style>
+    @keyframes gradient-x {
+      0%, 100% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+    }
+
+    .animate-gradient-x {
+      background: linear-gradient(270deg, #00c6ff, #0072ff, #00c6ff);
+      background-size: 600% 600%;
+      animation: gradient-x 8s ease infinite;
+    }
+  </style>
+
+</body>
+</html>
+
